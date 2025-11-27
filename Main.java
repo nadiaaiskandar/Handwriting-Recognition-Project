@@ -136,7 +136,8 @@ public class Main {
         }
 
         for (int k = 0; k < size; k++) {
-            numbers[imageArray[k].digit()] += sum / distances[k];
+            // Weighted votes
+            numbers[imageArray[k].digit()] += sum / distances[k]; 
         }
 
         double max = Integer.MIN_VALUE;
