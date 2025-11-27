@@ -41,57 +41,7 @@ public class Main {
     }
 
 
-    public static int smallestA(Image originalImage, Image[] image) {
-        int smallIndex = Integer.MAX_VALUE;
-        int smallerIndex = Integer.MAX_VALUE;
-        int smallestIndex = Integer.MAX_VALUE;
 
-        Image[] smallArray = new Image[3];
-
-        int distance;
-
-        // k, go through them, majority
-        // inversely
-
-        for (int i = 0; i < image.length; i++) {
-            distance = distance(originalImage, image[i]);
-            if (distance < smallIndex) {
-                if (distance < smallerIndex) {
-                    if (distance < smallestIndex) {
-
-                        smallArray[2] = smallArray[1];
-                        smallArray[1] = smallArray[0];
-                        smallArray[0] = image[i];
-
-                        smallestIndex = distance;
-
-                    }
-
-                    smallArray[2] = smallArray[1];
-                    smallArray[1] = image[i];
-                    smallerIndex = distance;
-
-                }
-                smallArray[2] = image[i];
-                smallIndex = distance;
-
-
-            }
-        }
-
-        if (smallArray[0].digit() == smallArray[1].digit() || smallArray[0].digit() == smallArray[2].digit()) {
-            return smallArray[0].digit();
-
-        } else if (smallArray[1] == smallArray[2]) {
-            return smallArray[1].digit();
-
-        } else if (smallArray[0].digit() != smallArray[1].digit() && smallArray[0].digit() != smallArray[2].digit()) {
-            return -1;
-        }
-
-        return -1;
-
-    }
 
 
     public static int smallest(Image originalImage, Image[] trainImages, int size) {
