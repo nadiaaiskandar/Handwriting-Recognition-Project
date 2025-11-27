@@ -177,6 +177,7 @@ public class Main {
 
             double errors = 0;
 /*
+            Code to test againts the dataset
             for (int i = 0; i < accuracyArray.length; i++) {
 
                 if (i % 10 == 0) {
